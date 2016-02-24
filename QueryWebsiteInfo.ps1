@@ -15,10 +15,7 @@ Process {
                  }
             }
         }
+End {
+    Write-Host -ForegroundColor Green "Access is Up!"
+    }
 
-Try {
-    $web.DownloadString($sitename)
-    }
-Catch {
-    Write-Warning "$($Error[0])"
-    }
