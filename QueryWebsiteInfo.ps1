@@ -6,11 +6,15 @@ Begin {
     }
 Process {
     While ($flag -eq $false) {
-        Try {
-            $web.DownloadString($sitename)
-            $flag = $true
+            Try {
+                $web.DownloadString($sitename)
+                $flag = $true
+                }
+            Catch {
+                Write-Host -ForegroundColor Red -NoNewline "Access Down..."
+                 }
             }
-        Catch
+        }
 
 Try {
     $web.DownloadString($sitename)
